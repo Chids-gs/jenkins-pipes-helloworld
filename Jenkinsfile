@@ -11,6 +11,8 @@ node {
     }
     stage('test') {
       sh "./test_hello.sh"
+      build job: 'RunArtInTest'
+      echo "done"
     }
     stage('package') {
       sh "tar -cvzf hello.tar.gz hello.sh"
